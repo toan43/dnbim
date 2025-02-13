@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DnBim</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lobster&family=Montserrat:wght@300;400;700&family=Bungee&display=swap');
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 10%;
+            background-color: #FFD700;
+            color: #333;
+        }
+        nav a {
+            font-family: 'Bungee', cursive;
+            margin: 0 15px;
+            color: #333;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 8px 12px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease-in-out, border 0.3s ease-in-out;
+        }
+        nav a:hover {
+            background-color: white;
+            border: 2px solid white;
+            color: #333;
+        }
+        .hero {
+            background-color: #FFD700;
+            color: #fff;
+            text-align: left;
+            padding: 80px 10%;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .hero img {
+            max-width: 400px;
+            border-radius: 20px;
+        }
+        .card-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 50px 10%;
+            background-color: #333;
+        }
+        .card {
+            background-color: #444;
+            padding: 20px;
+            flex: 1;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease-in-out;
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+        .card img {
+            width: 50px;
+            margin-bottom: 10px;
+        }
+        .education-section {
+            display: flex;
+            align-items: center;
+            padding: 80px 10%;
+            background-color: #fff;
+        }
+        .education-content {
+            flex: 1;
+        }
+        .education-image {
+            flex: 1;
+            text-align: right;
+        }
+        .education-image img {
+            max-width: 80%;
+            border-radius: 15px;
+        }
+        footer {
+            background-color: #FFD700;
+            color: #333;
+            text-align: center;
+            padding: 20px;
+        }
+        #model-container {
+            width: 100%;
+            height: 500px;
+            background-color: #f4f4f4;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/OBJLoader.js"></script>
+</head>
+<body>
+    <header>
+        <div style="font-family: 'Lobster', cursive; font-size: 2em; font-weight: 900;">DnBim</div>
+        <nav>
+            <a href="#">Trang chủ</a>
+            <a href="#">Giá cả</a>
+            <a href="#">Liên hệ</a>
+        </nav>
+    </header>
+    <section class="hero">
+        <div class="hero-content">
+            <h1 id="typing-header" style="color: black; font-family: 'Bungee', cursive; font-weight: 900;"></h1>
+            <p id="typing-text" style="color: black; font-family: 'Bungee', cursive;"></p>
+        </div>
+        <img src="student.jpg" alt="Student Image">
+    </section>
+    <script>
+        function typeWriter(element, text, speed, callback) {
+            let i = 0;
+            element.innerHTML = "";
+            function type() {
+                if (i < text.length) {
+                    element.innerHTML += text.charAt(i);
+                    i++;
+                    setTimeout(type, speed);
+                } else if (callback) {
+                    setTimeout(callback, 1000);
+                }
+            }
+            type();
+        }
+        
+        function startTyping() {
+            typeWriter(document.getElementById("typing-header"), "Hơn 1000+ học viên tin tưởng chúng tôi", 100, function() {
+                typeWriter(document.getElementById("typing-text"), "Chúng tôi hiểu cách các vật thể lớn hoạt động, nhưng những thứ ở quy mô nhỏ", 100, function() {
+                    setTimeout(() => {
+                        document.getElementById("typing-header").innerHTML = "";
+                        document.getElementById("typing-text").innerHTML = "";
+                        setTimeout(startTyping, 1000);
+                    }, 2000);
+                });
+            });
+        }
+        
+        document.addEventListener("DOMContentLoaded", startTyping);
+    </script>
+    <div class="card-container">
+        <div class="card">
+            <img src="icon1.png" alt="Evaluation">
+            <h3 style="color: white;">Thời gian đánh giá</h3>
+            <p style="color: white;">Nhanh chóng và chính xác</p>
+        </div>
+        <div class="card">
+            <img src="icon2.png" alt="Giáo viên được chứng nhận">
+            <h3 style="color: white;">Giáo viên được chứng nhận</h3>
+            <p style="color: white;">Đội ngũ giáo viên chuyên nghiệp</p>
+        </div>
+        <div class="card">
+            <img src="icon3.png" alt="Thư viện sách">
+            <h3 style="color: white;">Thư viện sách</h3>
+            <p style="color: white;">Hơn 10,000 đầu sách</p>
+        </div>
+    </div>
+    <section class="education-section">
+        <div class="education-content">
+            <h2>Làm cho giáo dục trực tuyến dễ tiếp cận hơn</h2>
+            <p>Những vấn đề cố gắng giải quyết xung đột giữa hai lĩnh vực chính của vật lý cổ điển: Cơ học Newton</p>
+            <a href="#">Tìm hiểu thêm →</a>
+        </div>
+        <div class="education-image">
+            <img src="education.jpg" alt="Education Image">
+        </div>
+    </section>
+    <div id="model-container"></div>
+    <footer>
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; padding: 40px 10%; background-color: #333; color: white;">
+            <div style="flex: 1;">
+                <h3 style="font-family: 'Lobster', cursive; font-size: 1.5em;">DnBim</h3>
+                <p>&copy; 2024 DnBim. Mọi quyền được bảo lưu.</p>
+            </div>
+            <div style="flex: 1; text-align: center;">
+                <a href="#" style="margin: 0 10px; color: white; text-decoration: none;">Privacy Policy</a>
+                <a href="#" style="margin: 0 10px; color: white; text-decoration: none;">Terms of Service</a>
+                <a href="#" style="margin: 0 10px; color: white; text-decoration: none;">Contact Us</a>
+            </div>
+            <div style="flex: 1; text-align: right;">
+                <a href="https://www.facebook.com/profile.php?id=100083281565411" style="margin: 0 10px;"><img src="facebook-icon.png" alt="Facebook" style="width: 24px;"></a>
+                <a href="#" style="margin: 0 10px;"><img src="zalo-icon.png" alt="Zalo" style="width: 24px;"></a>
+            </div>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const container = document.getElementById('model-container');
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000);
+            const renderer = new THREE.WebGLRenderer();
+            renderer.setSize(container.clientWidth, container.clientHeight);
+            container.appendChild(renderer.domElement);
+
+            const light = new THREE.DirectionalLight(0xffffff, 1);
+            light.position.set(1, 1, 1).normalize();
+            scene.add(light);
+
+            const loader = new THREE.OBJLoader();
+            loader.load('https://your-github-username.github.io/your-repo-name/model.obj', function(object) { // Ensure 'model.obj' is in the same directory as your HTML file
+                scene.add(object);
+                object.position.set(0, 0, 0);
+                object.scale.set(0.1, 0.1, 0.1);
+                console.log('Model loaded successfully');
+            }, undefined, function(error) {
+                console.error('An error happened', error);
+            });
+
+            camera.position.z = 5;
+
+            function animate() {
+                requestAnimationFrame(animate);
+                renderer.render(scene, camera);
+            }
+            animate();
+        });
+    </script>
+</body>
+</html>
