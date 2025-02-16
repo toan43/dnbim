@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DnBim</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Lobster&family=Montserrat:wght@300;400;700&family=Bungee&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Lobster&family=Montserrat:wght@300;400;700&family=Bungee&family=Poppins:wght@300;400;700&display=swap');
+        html {
+            scroll-behavior: smooth; /* Enable smooth scrolling */
+        }
         body {
             font-family: 'Montserrat', sans-serif;
             margin: 0;
@@ -73,22 +76,103 @@
             width: 50px;
             margin-bottom: 10px;
         }
-        .education-section {
+        .mid-section {
+            background: linear-gradient(135deg, #FFF8DC, #FAE68C, #F4A460, #8B5A2B);
+            padding: 100px 10%;
+            text-align: center;
+            min-height: 5000px;
+        }
+        .mid-section h2 {
+            font-family: 'Lobster', cursive;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        .mid-section p {
+            font-size: 1.2em;
+            margin-bottom: 40px;
+        }
+        .mid-section .features {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        .mid-section .feature {
+            background-color: #fff;
+            padding: 20px;
+            margin: 10px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            flex: 1;
+            max-width: 300px;
+            text-align: left;
+        }
+        .mid-section .feature img {
+            width: 50px;
+            margin-bottom: 10px;
+        }
+        .mid-section .feature h3 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+        .mid-section .feature p {
+            font-size: 1em;
+        }
+        .title-card {
+            background: linear-gradient(135deg, #1A0033, #3A1C71); /* Gradient tím */
+            color: #E8CBA4; /* Màu chữ vàng nhạt */
+            padding: 10px 10px;
+            border-radius: 15px; /* Bo góc */
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3); /* Đổ bóng */
             display: flex;
             align-items: center;
-            padding: 80px 10%;
-            background-color: #fff;
+            gap: 5px;
+            max-width: 800px;
+            text-align: left;
+            margin: -50px auto 20px auto; /* Center the title card */
         }
-        .education-content {
-            flex: 1;
+        .title-card h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 24px;
+            font-weight: bold;
+            line-height: 1.4;
         }
-        .education-image {
-            flex: 1;
-            text-align: right;
+        .icon {
+            width: 200px; /* Increase the size of the icon */
+            height: auto;
         }
-        .education-image img {
-            max-width: 80%;
+        .combined-card, .combined-card2, .combined-card3, .combined-card4 {
+            display: flex;
+            align-items: center;
+            gap: 20px; /* Adjusted gap for better visibility */
+            width: 1000px;
+            padding: 40px;
             border-radius: 15px;
+            background: rgba(255, 255, 255, 0.2); /* Nền trong suốt */
+            backdrop-filter: blur(10px); /* Hiệu ứng kính mờ */
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Đổ bóng nhẹ */
+            border: 1px solid rgba(255, 255, 255, 0.3); /* Viền mờ nhẹ */
+            text-align: justify; /* Align text to be justified */
+            margin-left: 50px; /* Move the card to the left */
+            margin-top: 150px; /* Move the card down */
+            font-family: 'Montserrat', sans-serif; /* Change font to Montserrat */
+            font-weight: bold;
+            font-size: 20px;
+        }
+        .combined-card2, .combined-card4 {
+            margin-top: 100px; /* Gap of 100px */
+            margin-left: 100px; /* Move the card to the right by 100px */
+        }
+        .image-border1 {
+            background: linear-gradient(135deg, #FFD700, #F4A460, #8B5A2B); /* Gradient vàng */
+            padding: 15px; /* Độ dày của viền */
+            border-radius: 20px; /* Bo góc */
+            display: inline-block; /* Giúp div ôm sát nội dung */
+        }
+        .image-border1 img {
+            display: block;
+            width: 300px; /* Điều chỉnh kích thước ảnh */
+            height: auto;
+            border-radius: 15px; /* Bo góc ảnh để khớp với viền */
         }
         footer {
             background-color: #FFD700;
@@ -101,9 +185,36 @@
             height: 500px;
             background-color: #f4f4f4;
         }
+        #dwg-viewer {
+            width: 100%;
+            height: 600px;
+            border: none;
+        }
+        .large-text {
+            font-size: 2em; /* 3 times the normal size */
+        }
+        .large-header {
+            font-size: 2em; /* 2 times the normal size */
+        }
+        .large-card {
+            flex: 5; /* 5 times the normal size */
+        }
+        .animate-on-scroll {
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+        .animate-on-scroll.visible {
+            opacity: 1;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes fadeOut {
+            from { opacity: 1; }
+            to { opacity: 0; }
+        }
     </style>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/OBJLoader.js"></script>
 </head>
 <body>
     <header>
@@ -116,8 +227,8 @@
     </header>
     <section class="hero">
         <div class="hero-content">
-            <h1 id="typing-header" style="color: black; font-family: 'Bungee', cursive; font-weight: 900;"></h1>
-            <p id="typing-text" style="color: black; font-family: 'Bungee', cursive;"></p>
+            <h1 id="typing-header" style="color: black; font-family: 'Bungee', cursive; font-weight: 900;" class="large-header"></h1>
+            <p id="typing-text" style="color: black; font-family: 'Bungee', cursive;" class="large-text"></p>
         </div>
         <img src="student.jpg" alt="Student Image">
     </section>
@@ -138,8 +249,8 @@
         }
         
         function startTyping() {
-            typeWriter(document.getElementById("typing-header"), "Hơn 1000+ học viên tin tưởng chúng tôi", 100, function() {
-                typeWriter(document.getElementById("typing-text"), "Chúng tôi hiểu cách các vật thể lớn hoạt động, nhưng những thứ ở quy mô nhỏ", 100, function() {
+            typeWriter(document.getElementById("typing-header"), "DNBIM MEP CENTER PROFILE", 100, function() {
+                typeWriter(document.getElementById("typing-text"), "DnBIM MEP – XÂY KIẾN THỨC, DỰNG TƯƠNG LAI", 100, function() {
                     setTimeout(() => {
                         document.getElementById("typing-header").innerHTML = "";
                         document.getElementById("typing-text").innerHTML = "";
@@ -152,33 +263,70 @@
         document.addEventListener("DOMContentLoaded", startTyping);
     </script>
     <div class="card-container">
-        <div class="card">
+        <div class="card animate-on-scroll">
             <img src="icon1.png" alt="Evaluation">
             <h3 style="color: white;">Thời gian đánh giá</h3>
             <p style="color: white;">Nhanh chóng và chính xác</p>
         </div>
-        <div class="card">
+        <div class="card animate-on-scroll">
             <img src="icon2.png" alt="Giáo viên được chứng nhận">
             <h3 style="color: white;">Giáo viên được chứng nhận</h3>
             <p style="color: white;">Đội ngũ giáo viên chuyên nghiệp</p>
         </div>
-        <div class="card">
+        <div class="card animate-on-scroll">
             <img src="icon3.png" alt="Thư viện sách">
             <h3 style="color: white;">Thư viện sách</h3>
             <p style="color: white;">Hơn 10,000 đầu sách</p>
         </div>
     </div>
     <section class="education-section">
-        <div class="education-content">
-            <h2>Làm cho giáo dục trực tuyến dễ tiếp cận hơn</h2>
-            <p>Những vấn đề cố gắng giải quyết xung đột giữa hai lĩnh vực chính của vật lý cổ điển: Cơ học Newton</p>
-            <a href="#">Tìm hiểu thêm →</a>
+        
+    </section>
+    <section class="mid-section">
+        <div class="title-card animate-on-scroll">
+            <img src="icon.png" alt="Icon" class="icon">
+            <h2>CHÀO MỪNG ĐẾN VỚI TRUNG TÂM<br> ĐÀO TẠO PHẦN MỀM DNBIM MEP</h2>
         </div>
-        <div class="education-image">
-            <img src="education.jpg" alt="Education Image">
+        <div class="combined-card animate-on-scroll">
+            <div class="glass-card1">
+                Trong bối cảnh ngành xây dựng ngày càng phát triển, nhu cầu về kỹ sư giỏi, giàu kinh nghiệm luôn là thách thức lớn đối với doanh nghiệp. Tuy nhiên, không phải kỹ sư mới ra trường nào cũng có thể đáp ứng ngay các yêu cầu thực tế của công việc.
+            </div>
+            <div class="image-border1">
+                <img src="example1.jpg" alt="Example Image">
+            </div>
+        </div>
+        <div class="combined-card2 animate-on-scroll">
+            <div class="image-border1">
+                <img src="example2.jpg" alt="Example Image">
+            </div>
+            <div class="glass-card1">
+                Hiểu được điều đó, DnBIM MEP ra đời với sứ mệnh đào tạo và cung cấp nguồn nhân lực kỹ sư chất lượng cao, giúp họ nhanh chóng thích nghi với môi trường làm việc chuyên nghiệp. Chúng tôi không chỉ trang bị kiến thức chuyên môn mà còn rèn luyện kỹ năng thực hành, giúp học viên tự tin đồng hành cùng các doanh nghiệp trong và ngoài nước.
+            </div>
+        </div>
+        <div class="combined-card3 animate-on-scroll">
+            <div class="glass-card1">
+                Là một trong những trung tâm đào tạo hàng đầu, DnBIM MEP cung cấp các khóa học chuyên sâu về HVAC, Fire Fighting, Plumbing, Electrical, cùng với các công cụ BIM (Building Information Modeling) tiên tiến nhất.
+            </div>
+            <div class="image-border1">
+                <img src="example3.jpg" alt="Example Image">
+            </div>
+        </div>
+        <div class="combined-card4 animate-on-scroll">
+            <div class="image-border1">
+                <img src="example4.jpg" alt="Example Image">
+            </div>
+            <div class="glass-card1">
+                Chúng tôi cam kết không ngừng đổi mới, cập nhật những công nghệ hiện đại nhất, trở thành cầu nối vững chắc giữa học viên và doanh nghiệp, giúp học viên có cơ hội tiếp cận với những dự án thực tế ngay trong quá trình đào tạo.
+            </div>
         </div>
     </section>
-    <div id="model-container"></div>
+    <div class="card-container">
+        <!-- New blank card container -->
+        <div class="card large-card animate-on-scroll">
+            <h3 style="color: white;">New Card</h3>
+            <p style="color: white;">This is a new blank card.</p>
+        </div>
+    </div>
     <footer>
         <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; padding: 40px 10%; background-color: #333; color: white;">
             <div style="flex: 1;">
@@ -226,6 +374,23 @@
                 renderer.render(scene, camera);
             }
             animate();
+        });
+
+        // Intersection Observer for animate-on-scroll
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    entry.target.style.animation = 'fadeIn 1s forwards';
+                } else {
+                    entry.target.classList.remove('visible');
+                    entry.target.style.animation = 'fadeOut 1s forwards';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.animate-on-scroll').forEach(element => {
+            observer.observe(element);
         });
     </script>
 </body>
