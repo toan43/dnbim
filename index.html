@@ -81,7 +81,7 @@
             background: linear-gradient(135deg, #FFF8DC, #FAE68C, #F4A460, #8B5A2B);
             padding: 100px 10%;
             text-align: center;
-            min-height: 5000px;
+            min-height: 12000px;
         }
         .mid-section h2 {
             font-family: 'Lobster', cursive;
@@ -389,7 +389,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 20px;
+            gap: 20px; /* Default gap between images */
             margin-top: 500px;
         }
         .below-images img {
@@ -398,6 +398,14 @@
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             border: 5px solid white; /* Add white outline */
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        .below-images img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+        .below-images .image5 {
+            margin-top: 0; /* Set gap between image5 and image4 to 0 */
         }
         footer {
             background-color: #FFD700;
@@ -522,6 +530,7 @@
             <div class="snowflake"></div>
             <div class="snowflake"></div>
         </div>
+        
         <div class="combined-card animate-on-scroll">
             <div class="glass-card1">
                 Trong bối cảnh ngành xây dựng ngày càng phát triển, nhu cầu về kỹ sư giỏi, giàu kinh nghiệm luôn là thách thức lớn đối với doanh nghiệp. Tuy nhiên, không phải kỹ sư mới ra trường nào cũng có thể đáp ứng ngay các yêu cầu thực tế của công việc.
@@ -555,37 +564,84 @@
             </div>
         </div>
         <div class="centered-image">
-            <div class="glass-card left-1">
+            <div class="glass-card left-1 card animate-on-scroll">
                 <p>Các phần mềm để xây dựng mô hình BIM</p>
             </div>
-            <div class="glass-card left-2">
+            <div class="glass-card left-2 card animate-on-scroll">
                 <p>Khái niệm, quy trình xây dựng BIM theo tiêu chuẩn ISO</p>
             </div>
             
-            <div class="glass-card right-1">
+            <div class="glass-card right-1 card animate-on-scroll">
                 <p>Thiết kế hệ thống thông gió và điều hòa không khí</p>
             </div>
-            <div class="glass-card right-2">
+            <div class="glass-card right-2 card animate-on-scroll">
                 <p>Thiết kế hệ thống phòng cháy chữa cháy</p>
             </div>
-            <div class="glass-card right-3">
+            <div class="glass-card right-3 card animate-on-scroll">
                 <p>Thiết kế hệ thống cấp thoát nước</p>
-            </div>
-            <img src="bim.png" alt="BIM Image">
-            <div class="glass-card below-1">
+            </div class="card animate-on-scroll">
+             <img src="bim.png" alt="BIM Image">
+            <div class="glass-card below-1 card animate-on-scroll">
                 <p>Quản lý dự án thi công</p>
             </div>
-            <div class="glass-card below-2">
+            <div class="glass-card below-2 card animate-on-scroll">
                 <p>Quản lý dự án thiết kế</p>
             </div>
-            <div class="glass-card below-3">
+            <div class="glass-card below-3 card animate-on-scroll">
                 <p>Quản lý dự án xây dựng mô hình thông tin (BIM)</p>
             </div>
         </div>
-        <div class="below-images">
+        <div class="below-images ">
             <img src="image1.jpg" alt="Image 1">
             <img src="image2.jpg" alt="Image 2">
             <img src="image3.jpg" alt="Image 3">
+            <img src="image4.jpg" alt="Image 4">
+            <img src="image5.jpg" alt="Image 5" class="image5">
+            <img src="image6.jpg" alt="Image 6">
+            <img src="image7.jpg" alt="Image 7">
+            <img src="image8.jpg" alt="Image 8">
+            <img src="image9.jpg" alt="Image 9">
+            <img src="image10.jpg" alt="Image 10">
+            
+            <img src="image12.jpg" alt="Image 12">
+        </div>
+        <!-- Duplicate title-card below image12 -->
+        <div class="title-card animate-on-scroll" style="margin-top: 50px;">
+            <img src="icon.png" alt="Icon" class="icon">
+            <h2>SẢN PHẨM DỰ ÁN THỰC TẾ CỦA HỌC VIÊN DNBIM MEP
+                ĐÃ THAM GIA VÀ THỰC HIỆN</h2>
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+        </div>
+        <!-- Add two text boxes below the duplicated title-card -->
+        <div class="text-box animate-on-scroll" style="width: 400px; height: 50px; margin: auto; padding: 10px; background: yellow; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); text-align: center; color: black; display: flex; align-items: center; justify-content: center; font-family: 'Montserrat', sans-serif; font-weight: 700;">
+            <p style="margin: 0;">MÔ HÌNH BIM HỆ THỐNG ĐIỆN</p>
+        </div>
+        <!-- Embed the link below Text Box 1 -->
+        <div class="embed-link animate-on-scroll" style="margin-top: 40px auto; padding: 20px; background: #fff; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+            <iframe src="https://gmail2546678.autodesk360.com/g/shares/SH30dd5QT870c25f12fc2401e0f75bd33735" width="100%" height="600px" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="text-box animate-on-scroll" style="width: 400px; margin-top: 40px auto; height: 50px; margin: auto; padding: 10px; background: yellow; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); text-align: center; color: black; display: flex; align-items: center; justify-content: center; font-family: 'Montserrat', sans-serif; font-weight: 700;">
+            <p style="margin: 0;">MÔ HÌNH BIM NHÀ MÁY XỬ LÝ NƯỚC THẢI</p>
+        </div>
+        <!-- Embed the new link below Text Box 2 -->
+        <div class="embed-link animate-on-scroll" style="margin-top: 40px auto; padding: 40px auto; background: #fff; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+            <iframe src="https://gmail2546678.autodesk360.com/g/shares/SH30dd5QT870c25f12fce024e3f4d712fb64" width="100%" height="600px" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <!-- Add Text Box 3 below the second link -->
+        <div class="text-box animate-on-scroll" style="width: 400px; margin-top: 40px auto; height: 50px; margin: auto; padding: 10px; background: yellow; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); text-align: center; color: black; display: flex; align-items: center; justify-content: center; font-family: 'Montserrat', sans-serif; font-weight: 700;">
+            <p style="margin: 0;">MÔ HÌNH BIM HỆ THỐNG CẤP THOÁT NƯỚC</p>
+        </div>
+        <!-- Embed the new link below Text Box 3 -->
+        <div class="embed-link animate-on-scroll" style="margin-top: 40px auto; padding: 20px; background: #fff; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+            <iframe src="https://gmail2546678.autodesk360.com/g/shares/SH30dd5QT870c25f12fce024e3f4d712fb64" width="100%" height="600px" frameborder="0" allowfullscreen></iframe>
         </div>
     </section>
     <div class="card-container">
@@ -652,13 +708,32 @@
                     entry.target.style.animation = 'fadeIn 1s forwards';
                 } else {
                     entry.target.classList.remove('visible');
-entry.target.style.animation = 'fadeOut 1s forwards';
+                    entry.target.style.animation = 'fadeOut 1s forwards';
                 }
             });
         }, { threshold: 0.1 });
 
         document.querySelectorAll('.animate-on-scroll').forEach(element => {
             observer.observe(element);
+        });
+
+        // Chặn chuột phải
+        document.addEventListener("contextmenu", function (event) {
+            event.preventDefault();
+            alert("Không thể sử dụng chuột phải!");
+        });
+
+        // Chặn F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U
+        document.addEventListener("keydown", function (event) {
+            if (event.ctrlKey && (event.key === "u" || event.key === "U")) {
+                event.preventDefault();
+            }
+            if (event.ctrlKey && event.shiftKey && (event.key === "I" || event.key === "J" || event.key === "C")) {
+                event.preventDefault();
+            }
+            if (event.key === "F12") {
+                event.preventDefault();
+            }
         });
     </script>
 </body>
